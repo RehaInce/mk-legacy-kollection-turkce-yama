@@ -35,6 +35,17 @@ Oyunun içindeki 162 metnin tamamı çevrildi: biyografiler, karakter sonları, 
 - `run.sh`: otomatik bir oyun oynayıp ekran görüntüleri alır
 - `bisect_mk1.py`: oyunu çökerten metni bulur
 
+## Game Boy Mortal Kombat yaması
+
+Biyografiler, dövüş yazıları, menüler ve final metni çevrildi. Game Boy fontunda boş yer olmadığından Türkçe harfler, Türkçede kullanılmayan `Q X` ile yalnızca telif ekranında geçen `© ®` karakterlerinin yerine çizildi. Böylece `Ç Ö Ş Ü` var; `Ğ` ve `İ` ise `G` ve `I` olarak görünür.
+
+1. Oyunda **Game Boy Mortal Kombat**'ı aç. Oyun başlayınca `GB_1_ROM_Cikar.bat` dosyasını çalıştır (yönetici izni ister).
+2. Oyunu kapat ve `GB_2_Turkce_Yamayi_Uygula.bat` dosyasını çalıştır.
+
+**Geri almak için:** `GB_Orijinale_Geri_Don.bat`.
+
+**Çeviriye katkı:** `gb/gb_mk1_tr.json` dosyasında `"0xBLOK": ["satır", ...]` biçiminde duruyor. Her blok, orijinaliyle aynı sayıda satır içermeli. Satırlar en fazla 20 karakter olabilir ve blok orijinalinden uzun olamaz; `gb_build.py` bu kuralları kontrol eder. Fontta kesme işareti yok, ekler doğrudan isme yazılır (KANOYU). Test için: `gb/test/run.sh`.
+
 ## Nasıl çalışıyor
 
 `assets.pie`, konuma bağlı bir akış şifresiyle (AES-CTR benzeri) şifrelenmiş bir ZIP arşivi. Metinler, sıkıştırılmamış `strings/locale.strings` dosyasında duruyor. Şifrenin anahtarına gerek yok: `şifreli ⊕ orijinal ⊕ yeni` işlemi aynı konumdaki keystream'i yeniden kullanıyor. Bunun için orijinal metnin bilinmesi gerekiyor, `extract_strings.py` de bu yüzden var.

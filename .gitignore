@@ -10,3 +10,6 @@ mk1/test/roms/
 mk1/test/reset.txt
 mk1/test/sheet.png
 mk1/test/*.maincpu
+gb/*.gb
+gb/test/roms/
+gb/test/sheet.png
