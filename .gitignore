@@ -13,3 +13,6 @@ mk1/test/*.maincpu
 gb/*.gb
 gb/test/roms/
 gb/test/sheet.png
+gg/*.gg
+gg/test/roms/
+gg/test/sheet.png

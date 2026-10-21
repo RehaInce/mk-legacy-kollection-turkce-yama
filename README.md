@@ -46,6 +46,17 @@ Biyografiler, dövüş yazıları, menüler ve final metni çevrildi. Game Boy f
 
 **Çeviriye katkı:** `gb/gb_mk1_tr.json` dosyasında `"0xBLOK": ["satır", ...]` biçiminde duruyor. Her blok, orijinaliyle aynı sayıda satır içermeli. Satırlar en fazla 20 karakter olabilir ve blok orijinalinden uzun olamaz; `gb_build.py` bu kuralları kontrol eder. Fontta kesme işareti yok, ekler doğrudan isme yazılır (KANOYU). Test için: `gb/test/run.sh`.
 
+## Game Gear Mortal Kombat yaması
+
+Karakter sonları, Goro'nun hikâyesi, açılıştaki "kod" metinleri, dövüş yazıları, menüler ve rekor ekranı çevrildi. Fonttaki kullanılmayan küçük harflerin yerine `Ç Ğ İ Ö Ş Ü` çizildi, yani bütün Türkçe harfler var. Başlık ekranındaki "PRESS START" bir resim olduğundan İngilizce kaldı.
+
+1. Oyunda **Game Gear Mortal Kombat**'ı aç. Oyun başlayınca `GG_1_ROM_Cikar.bat` dosyasını çalıştır (yönetici izni ister).
+2. Oyunu kapat ve `GG_2_Turkce_Yamayi_Uygula.bat` dosyasını çalıştır.
+
+**Geri almak için:** `GG_Orijinale_Geri_Don.bat`.
+
+**Çeviriye katkı:** `gg/gg_mk1_tr.json` dosyasında iki biçim var. Liste (`["satır", ...]`) bir sayfadır: satırlar serbestçe bölünebilir, ama sayfa orijinalinden uzun olamaz. Tek metin (`"metin"`) yerinde kalır ve orijinalinden uzun olamaz. Satırlar en fazla 20 karakter. Test için: `gg/test/run.sh`.
+
 ## Nasıl çalışıyor
 
 `assets.pie`, konuma bağlı bir akış şifresiyle (AES-CTR benzeri) şifrelenmiş bir ZIP arşivi. Metinler, sıkıştırılmamış `strings/locale.strings` dosyasında duruyor. Şifrenin anahtarına gerek yok: `şifreli ⊕ orijinal ⊕ yeni` işlemi aynı konumdaki keystream'i yeniden kullanıyor. Bunun için orijinal metnin bilinmesi gerekiyor, `extract_strings.py` de bu yüzden var.

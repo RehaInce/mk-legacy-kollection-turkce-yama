@@ -12,6 +12,7 @@ ENTRIES = {
     'roms/moo/Midway/MortalKombat_T/mkr4.maincpu': dict(cd=416524, lho=4241859819, nl=43, usz=1048576, crc=0xec1d9e34),
     'roms/moo/Midway/MortalKombat_T/mk.gfxrom':    dict(cd=416402, lho=4235568293, nl=40, usz=6291456, crc=0xab6407f2),
     'roms/gb/gb_mk1_us.gb':                        dict(cd=413455, lho=4112842294, nl=20, usz=262144, crc=0x64f5460c),
+    'roms/moo/Sega/GameGear/Mortal Kombat (JUE) (V3.3).gg': dict(cd=418337, lho=4278851889, nl=52, usz=524288, crc=0xdbff0461),
 }
 # small ROMs share heap blocks with other data: find them by header signature (Game Boy logo, SEGA string)
 SIGS = ((bytes.fromhex('ceed6666cc0d000b'), 0x104), (b'TMR SEGA', 0x7ff0))
