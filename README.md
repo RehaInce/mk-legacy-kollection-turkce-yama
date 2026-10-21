@@ -6,7 +6,7 @@ Mortal Kombat: Legacy Kollection (PC) için gayriresmî Türkçe çeviri. Türk�
 
 **Sınırlamalar**
 - Oyunun fontlarında `ğ ş ı İ` harfleri yok. Bu harfler `g s i I` olarak gösterilir. `ç ö ü` sorunsuz görünür.
-- Derlemedeki orijinal oyunlar (MK1, MK2, Trilogy vb.) ROM'ların içinde olduğu için İngilizce kalır.
+- Derlemedeki orijinal oyunların metinleri ROM'ların içinde. Şimdilik yalnızca **arcade Mortal Kombat (1992)** çevrildi (aşağıya bak). Diğerleri İngilizce kalıyor.
 
 ## Kurulum
 
@@ -20,6 +20,20 @@ Gerekenler: Windows ve [Python 3.8+](https://www.python.org/downloads/).
 **Geri almak için:** `Orijinale_Geri_Don.bat`. Yamalayıcı, değiştirdiği byte'ların orijinallerini ilk çalıştırmada `assets.pie.tr-backup` dosyasına yedekler.
 
 **Oyun güncellenirse:** Yamalar arşivin belirli bir sürümüne göre yazıldı. Güncellemeden sonra Türkçe kaybolursa yamayı yeniden uygulamadan önce bir issue aç.
+
+## Arcade Mortal Kombat (1992) yaması
+
+Oyunun içindeki 162 metnin tamamı çevrildi: biyografiler, karakter sonları, "BİTİR ONU !!", "RAUNT 1", "DÖVÜŞÇÜNÜ SEÇ", "KUSURSUZ ZAFER", tanıtım ekranları ve Reptile ipuçları. Oyunun üç fontuna `Ç Ğ İ Ö Ş Ü` harfleri piksel piksel çizilip eklendi.
+
+1. Oyunu aç ve **arcade Mortal Kombat**'ı başlat. Başlık ekranı gelince `MK1_1_ROM_Cikar.bat` dosyasını çalıştır (yönetici izni ister). Bu adım ROM'ları senin kopyandan `mk1/` klasörüne çıkarır.
+2. Oyunu kapat ve `MK1_2_Turkce_Yamayi_Uygula.bat` dosyasını çalıştır.
+
+**Geri almak için:** `MK1_Orijinale_Geri_Don.bat`. Orijinal byte'lar `assets.pie.mkr4.maincpu.bak` ve `assets.pie.mk.gfxrom.bak` dosyalarına yedeklenir.
+
+**Çeviriye katkı:** `mk1/mk1_tr.json` dosyasında `"0xADRES": "METİN"` biçiminde duruyor. `|` satır sonu demek. `%d`, `%p` ve `%,ld` aynen kalmalı. Pointer'ı olmayan metinler orijinalinden uzun olamaz, `build_mk1.py` bunu kontrol eder. Test için `mk1/test/` klasöründeki betikler [MAME 0.264](https://github.com/mamedev/mame/releases/tag/mame0264) ile oyunu görüntüsüz çalıştırır:
+- `check.sh`: çökme testi
+- `run.sh`: otomatik bir oyun oynayıp ekran görüntüleri alır
+- `bisect_mk1.py`: oyunu çökerten metni bulur
 
 ## Nasıl çalışıyor
 

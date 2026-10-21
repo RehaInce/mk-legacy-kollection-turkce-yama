@@ -3,3 +3,10 @@ locale.strings.orig
 tr.strings
 unique_en.json
 __pycache__/
+mk1/*.maincpu
+mk1/*.gfxrom
+mk1/*.adpcm_*
+mk1/test/roms/
+mk1/test/reset.txt
+mk1/test/sheet.png
+mk1/test/*.maincpu
